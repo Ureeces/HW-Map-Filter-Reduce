@@ -126,6 +126,7 @@ let result4 = businesses
 
         return 0; 
     }); // This array is now sorted in alphabetical order of company property
+
 //  .sort((businessA, businessB) => businessA.startYear - businessB.startYear) - sorts based on start year
 
 result4;
@@ -149,8 +150,34 @@ const multiply5 = function(arr) {
     .map((x) => x * 5); // Return the integers multiplied by 5
 }
 
+const altMult5 = function(arr) {
+    return arr.reduce((fives, num) => {
+        if(typeof(num) === 'number') {
+            if(Number.isInteger(num)) {
+                fives.push(num * 5);
+            }
+        }
+
+        return fives;
+    }, [])
+}
+
 console.log(multiply5(fives1));
 console.log(multiply5(fives2));
 console.log(multiply5(fives3));
+
+console.log(altMult5(fives1));
+console.log(altMult5(fives2));
+console.log(altMult5(fives3));
+
+// 6.
+// - Count the number times the same element value appears in an array and display your answer in an object with the element as the key and the number of times as the value
+// - Use reduce and use its second argument to initialize the empty object
+// - The properties in the object will have a string for the key and a number for the value
+// - The key in each property should be the value in the array we are counting.
+// - The value in the object property should be the number of times a value appears in the original array.
+const arr1 = [5,3,2,5,6]; //should be {'5':2,'3':1,'2':1,'6':1}
+const arr2 = [3,1,2,5,2,5,7,5] // should be { '1': 1, '2': 2, '3': 1, '5': 3, '7': 1 }
+
 
 
