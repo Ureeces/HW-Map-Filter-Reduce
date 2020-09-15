@@ -58,3 +58,39 @@ let result = data
     .reduce((total, wineCount) => total + wineCount, 0); // This is the total wine count of all red wines
 
 console.log(result);
+
+// 3. Just Averages
+//  - Using reduce, return an integer value for the average of all the index values and/or calculated values in an array.
+//  - If the Value is a String, use the character Code number that represents the  first letter in the String.
+//  - Use all four arguments in the callback function in your solution
+//  - And a ternary wouldn't hurt
+const nums1 = [8, 21.3, 16, 55, 22, 44]; // should be 27
+const nums2 = [11.12, 43, 56.22, 78, 98, 11]; // should be 49
+const nums3 = [2, 1222, 3444, 7254, 83.04444, 1111]; // should be 2186
+const nums4 = [2, 1222,'sneeze', 3444, 7254, 8, 'abacus']; //should be 1734
+
+const justAverages = function(arr) {
+    let total = arr.reduce((total, num, index) => {
+        let isNum = typeof(num) === 'number' ? true : false;
+        if(isNum) {
+            total += num;
+        }
+
+        else {
+            total += arr[index].charCodeAt(0);
+        }
+
+        return total;
+    }, 0)
+
+    let avg = total / arr.length;
+
+    return Math.floor(avg);
+}
+
+console.log(justAverages(nums1));
+console.log(justAverages(nums2));
+console.log(justAverages(nums3));
+console.log(justAverages(nums4));
+
+
