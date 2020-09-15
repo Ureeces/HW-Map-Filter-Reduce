@@ -133,8 +133,24 @@ result4;
 
 // 5. COMPUTE INTEGERS
 //    Use an array method to return a new array that multiplies all integers in an array by 5.
-[1,2,3,4];  // should be [5,10,15,20]
-[1,2,undefined,6] // should be [5,10,30]
-[1,3,25.5,4,32.9] // should be [5,15,20]
+let fives1 = [1,2,3,4];  // should be [5,10,15,20]
+let fives2 = [1,2,undefined,6] // should be [5,10,30]
+let fives3 = [1,3,25.5,4,32.9] // should be [5,15,20]
+
+const multiply5 = function(arr) {
+    return arr
+    .filter((x) => {    
+        if(typeof(x) === 'number') {
+            if(Number.isInteger(x)) {
+                return x;
+            }
+        }
+    }) // Filter out non integers
+    .map((x) => x * 5); // Return the integers multiplied by 5
+}
+
+console.log(multiply5(fives1));
+console.log(multiply5(fives2));
+console.log(multiply5(fives3));
 
 
