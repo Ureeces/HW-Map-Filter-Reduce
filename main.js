@@ -69,6 +69,7 @@ const nums2 = [11.12, 43, 56.22, 78, 98, 11]; // should be 49
 const nums3 = [2, 1222, 3444, 7254, 83.04444, 1111]; // should be 2186
 const nums4 = [2, 1222,'sneeze', 3444, 7254, 8, 'abacus']; //should be 1734
 
+// Condensed it into function so no code is repeated
 const justAverages = function(arr) {
     let total = arr.reduce((total, num, index) => {
         let isNum = typeof(num) === 'number' ? true : false;
@@ -92,5 +93,25 @@ console.log(justAverages(nums1));
 console.log(justAverages(nums2));
 console.log(justAverages(nums3));
 console.log(justAverages(nums4));
+
+
+// 4. Choose all the companies that started after 2000 and sort them ascending
+let businesses = [
+    { company: 'Amex', startYear: 2000 },
+    { company: 'Chase', startYear: 1998 },
+    { company: 'Citibank', startYear: 2010 },
+    { company: 'BOA', startYear: 1980 },
+    { company: 'TD', startYear: 2001 },
+    { company: 'Mastercard', startYear: 2011 },
+    { company: 'VISA', startYear: 2000 }
+];
+
+let result4 = businesses
+    .filter((business) => business.startYear > 2000) // This is an array of the objects that started after 2000
+    .sort((businessA, businessB) => businessA.startYear - businessB.startYear)
+
+result4;
+
+
 
 
