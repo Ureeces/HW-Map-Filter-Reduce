@@ -97,21 +97,44 @@ console.log(justAverages(nums4));
 
 // 4. Choose all the companies that started after 2000 and sort them ascending
 let businesses = [
-    { company: 'Amex', startYear: 2000 },
+    // { company: 'Amex', startYear: 2000 },
+    // { company: 'Chase', startYear: 1998 },
+    // { company: 'Citibank', startYear: 2010 },
+    // { company: 'BOA', startYear: 1980 },
+    // { company: 'TD', startYear: 2001 },
+    // { company: 'Mastercard', startYear: 2011 },
+    // { company: 'VISA', startYear: 2000 }
+    { company: 'VISA', startYear: 2000 },
     { company: 'Chase', startYear: 1998 },
-    { company: 'Citibank', startYear: 2010 },
     { company: 'BOA', startYear: 1980 },
+    { company: 'Amex', startYear: 2000 },
     { company: 'TD', startYear: 2001 },
     { company: 'Mastercard', startYear: 2011 },
-    { company: 'VISA', startYear: 2000 }
+    { company: 'Citibank', startYear: 2010 },
 ];
 
 let result4 = businesses
     .filter((business) => business.startYear > 2000) // This is an array of the objects that started after 2000
-    .sort((businessA, businessB) => businessA.startYear - businessB.startYear)
+    .sort((businessA, businessB) => {
+        if(businessA.company > businessB.company) {
+            return 1;
+        }
+
+        if(businessA.company < businessB.company) {
+            return -1;
+        }
+
+        return 0; 
+    }); // This array is now sorted in alphabetical order of company property
+//  .sort((businessA, businessB) => businessA.startYear - businessB.startYear) - sorts based on start year
 
 result4;
 
 
+// 5. COMPUTE INTEGERS
+//    Use an array method to return a new array that multiplies all integers in an array by 5.
+[1,2,3,4];  // should be [5,10,15,20]
+[1,2,undefined,6] // should be [5,10,30]
+[1,3,25.5,4,32.9] // should be [5,15,20]
 
 
