@@ -140,22 +140,14 @@ let fives3 = [1,3,25.5,4,32.9] // should be [5,15,20]
 
 const multiply5 = function(arr) {
     return arr
-    .filter((x) => {    
-        if(typeof(x) === 'number') {
-            if(Number.isInteger(x)) {
-                return x;
-            }
-        }
-    }) // Filter out non integers
+    .filter((x) => typeof(x) === 'number' && Number.isInteger(x)) // Filter out non integers
     .map((x) => x * 5); // Return the integers multiplied by 5
 }
 
 const altMult5 = function(arr) {
     return arr.reduce((fives, num) => {
-        if(typeof(num) === 'number') {
-            if(Number.isInteger(num)) {
-                fives.push(num * 5);
-            }
+        if(typeof(num) === 'number' && Number.isInteger(num)) {
+            fives.push(num * 5);
         }
 
         return fives;
