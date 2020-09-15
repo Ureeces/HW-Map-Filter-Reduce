@@ -171,5 +171,16 @@ console.log(altMult5(fives3));
 const arr1 = [5,3,2,5,6]; //should be {'5':2,'3':1,'2':1,'6':1}
 const arr2 = [3,1,2,5,2,5,7,5] // should be { '1': 1, '2': 2, '3': 1, '5': 3, '7': 1 }
 
+const numCount = function(arr) {
+    return arr.reduce((numCounts, num) => {
+        numCounts[num] = numCounts[num] + 1 || 1;
+
+        return numCounts;
+    }, {})
+}
+
+console.log(numCount(arr1));
+console.log(numCount(arr2));
+
 
 
