@@ -52,3 +52,9 @@ let data = [
     }
 ];
 
+let result = data
+    .filter((wine) => wine.wineColor === 'red') // This is now an array of objects containing the wine objects that are red wines
+    .map((wine) => wine.numBottles += 500) // This is now an array of numbers containing the wine counts of all red wines, plus 500 each
+    .reduce((total, wineCount) => total + wineCount, 0); // This is the total wine count of all red wines
+
+console.log(result);
